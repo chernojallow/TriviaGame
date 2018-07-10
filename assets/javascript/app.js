@@ -51,16 +51,16 @@
 
 
    $(document).ready(function() {
-    // Create a function that creates the start button and initial screen
     
-    //modified cherno
+    
+
     function startGame() {
         $(".bootstrap").html ("<p class='start'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start</a></p>");
     
     }
       startGame();
     
-    //Create a function, generateHTML(), that is triggered by the start button, and generates the HTML seen on the project video...
+   
     
     $("body").on("click", ".start-button", function(event){
         event.preventDefault();  // added line to test issue on GitHub Viewer
@@ -69,12 +69,12 @@
     
         setTimer();
     
-    }); // Closes start-button click
+    }); 
     
     $("body").on("click", ".answer", function(event){
-        //answeredQuestion = true;
+       
 
-        // modified;
+       
         clickSound.play();
         var  selectedAnswer = $(this).text();
         if($(this).text() === answers[questionCounter]) {
@@ -88,45 +88,45 @@
             clearInterval(time);
             loss();
         }
-    }); // Close .answer click
+    }); 
     
     $("body").on("click", ".reset-button", function(event){
         clickSound.play();
         reset();
     }); // Closes reset-button click
     
-    });  //  Closes jQuery wrapper
+    });  
     
-    // modified
+    
     function timeOut() {
         notAnswered++;
         $(".bootstrap").html 
         ("<p class='time'>Time Remaining: <span class='timer'>" + count + "</span></p>" +
           "<p class='text-center'>You ran out of time! The correct answer was: " + answers[questionCounter] + "</p>" +
           "<img class='center-block img-wrong' src='img/x.png'>");
-     var timer =  setTimeout(wait, 2000);  //  change to 4000 or other amount
+     var timer =  setTimeout(wait, 2000);  
     }
     
-    // modified
+    
     function win() {
         rightAnswer++;
         $(".bootstrap").html  ("<p class='time'>Time Remaining: <span class='timer'>" + count + "</span></p>" + 
         "<p class='text-center'>Correct! The answer is: " + answers[questionCounter] + "</p>" + imageArray[questionCounter]);
        
-     var timer= setTimeout(wait, 2000);  //  change to 4000 or other amount
+     var timer= setTimeout(wait, 2000);  
     }
     
-    // modified
+    /
     function loss() {
         wrongAnswer++;
         $(".bootstrap").html("<p class=' time'>Time Remaining: <span class='timer'>" + count + "</span></p>" + 
         "<p class='text-center'>Wrong! The correct answer is: "+ answers[questionCounter] + "</p>" + 
         "<img class='center-block img-wrong' src='img/x.png'>");
-      var timer = setTimeout(wait, 2000); //  change to 4000 or other amount
+      var timer = setTimeout(wait, 2000); 
     }
     
 
-    // modified
+
     function domHTML() {
         $(".bootstrap").html ("<p class='time'>Time Remaining: <span class='timer'>20</span></p><p class='text-center'>" + 
         questions[questionCounter] + "</p><p class='first-answer answer'>A. " + options[questionCounter][0] + 
@@ -164,7 +164,7 @@
         }
     }
     
-    // modified
+    
     function endGame() {
         $(".bootstrap").html 
         ("<p class=' time'>Time Remaining: <span class='timer'>" + count + "</span></p>" + 
