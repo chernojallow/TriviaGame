@@ -1,18 +1,12 @@
 
 
-  
-
-
-
+    var timeON = false;
     var questionCounter = 0;
     var selecterAnswer;
     var time;
     var rightAnswer = 0;
     var wrongAnswer = 0;
     var notAnswered = 0;
-    var clickSound = new Audio("sound/button-click.mp3"); 
-    var timeON = false;
-
     var count = 20;
     var questions = ["Who is the current president of USA?", 
                          "What is the capital of Texas?", 
@@ -44,39 +38,23 @@
                           
                     
 
-  
-
-
-
-
-
-   $(document).ready(function() {
+    $(document).ready(function() {
     
-    
-
-    function startGame() {
+        // start game function
+      function startGame() {
         $(".bootstrap").html ("<p class='start'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start</a></p>");
-    
     }
       startGame();
     
-   
-    
-    $("body").on("click", ".start-button", function(event){
-        event.preventDefault();  // added line to test issue on GitHub Viewer
-        clickSound.play();
-        domHTML();
-    
-        setTimer();
-    
+     $("body").on("click", ".start-button", function(event){
+        event.preventDefault();  
+       domHTML();
+       setTimer();
     }); 
     
     $("body").on("click", ".answer", function(event){
        
-
-       
-        clickSound.play();
-        var  selectedAnswer = $(this).text();
+       var  selectedAnswer = $(this).text();
         if($(this).text() === answers[questionCounter]) {
             //alert("correct");
     
@@ -91,12 +69,11 @@
     }); 
     
     $("body").on("click", ".reset-button", function(event){
-        clickSound.play();
+    
         reset();
-    }); // Closes reset-button click
+    }); 
     
     });  
-    
     
     function timeOut() {
         notAnswered++;
@@ -116,8 +93,7 @@
      var timer= setTimeout(wait, 2000);  
     }
     
-    /
-    function loss() {
+     function loss() {
         wrongAnswer++;
         $(".bootstrap").html("<p class=' time'>Time Remaining: <span class='timer'>" + count + "</span></p>" + 
         "<p class='text-center'>Wrong! The correct answer is: "+ answers[questionCounter] + "</p>" + 
@@ -125,8 +101,6 @@
       var timer = setTimeout(wait, 2000); 
     }
     
-
-
     function domHTML() {
         $(".bootstrap").html ("<p class='time'>Time Remaining: <span class='timer'>20</span></p><p class='text-center'>" + 
         questions[questionCounter] + "</p><p class='first-answer answer'>A. " + options[questionCounter][0] + 
@@ -146,10 +120,8 @@
         }
     }
     
-    // modified
     function setTimer() {
-
-         if (!timeON) {
+        if (!timeON) {
         time = setInterval(thirtySeconds, 1000);
          }
         function thirtySeconds() {
@@ -164,8 +136,7 @@
         }
     }
     
-    
-    function endGame() {
+     function endGame() {
         $(".bootstrap").html 
         ("<p class=' time'>Time Remaining: <span class='timer'>" + count + "</span></p>" + 
         "<p class='text-center'>All done, here's how you did!" + "</p>" +  
