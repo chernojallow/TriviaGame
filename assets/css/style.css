@@ -1,6 +1,17 @@
 
 
-/*
+
+    body {
+      background-image: url("../images/imageBack.jpeg");
+      color: white;
+    }
+    
+    .box{
+      background-image: url("../images/image.jpeg");
+      margin:40px 60px 40px 60px;
+  
+    }
+
 .jumbotron {
     box-sizing: border-box;
     height: 600px;
@@ -21,9 +32,6 @@
     text-align:center;
   }
   
-  .answer:hover {
-    background: pink;
-  }
   
   .answer {
     padding-top: 7px;
@@ -38,6 +46,8 @@
     margin-top: 40px;
   }
   
+
+
   .first-answer {
     margin-top: 40px;
   }
@@ -50,9 +60,5 @@
     margin-top: 40px;
   }
   
-  body {
-    background-color: #DD0506;
-    color: white;
-  }
 
   

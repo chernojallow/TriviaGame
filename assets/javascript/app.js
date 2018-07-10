@@ -97,7 +97,7 @@
         wrongAnswer++;
         $(".bootstrap").html("<p class=' time'>Time Remaining: <span class='timer'>" + count + "</span></p>" + 
         "<p class='text-center'>Wrong! The correct answer is: "+ answers[questionCounter] + "</p>" + 
-        "<img class='center-block img-wrong' src='img/x.png'>");
+        "<img class='center-block img-wrong' src='assets/images/image8.jpg'>");
       var timer = setTimeout(wait, 2000); 
     }
     
