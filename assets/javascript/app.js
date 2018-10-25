@@ -1,5 +1,5 @@
 
-
+// global variables
     var timeON = false;
     var questionCounter = 0;
     var selecterAnswer;
